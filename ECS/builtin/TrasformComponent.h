@@ -1,16 +1,22 @@
 #pragma once
 #include "../component.h"
-#include "../../utils/vec2.h"
+#include "vec2.h"
 #include <vector>
 
-class TransformComponent : public Component
+class TransformComponent: public Component
 {
 public:
-
-	void update() override {}
+	vec2f position();
+	vec2f localPosition();
+	void updateGlobalPosition();
+	void updateLocalPosition();
+	void setPosition(float x, float y);
+	void setLocalPosition(float x, float y);
+	void setParent(TransformComponent * parent, bool stayGlobalPosition);
 
 private:
-	vec2i position;
-	TransformComponent * parent;
+	vec2f lPos;
+	vec2f gPos;
+	TransformComponent * parent = nullptr;
 	std::vector<TransformComponent> child;
 };

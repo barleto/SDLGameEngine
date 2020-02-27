@@ -43,10 +43,17 @@ public:
 		return *this;
 	}
 
-	vec2 operator+(vec2& v) {
+	/*vec2 operator+(vec2& v) {
 		return vec2(x + v.x, y + v.y);
 	}
 	vec2 operator-(vec2& v) {
+		return vec2(x - v.x, y - v.y);
+	}*/
+
+	vec2 operator+(vec2 v) {
+		return vec2(x + v.x, y + v.y);
+	}
+	vec2 operator-(vec2 v) {
 		return vec2(x - v.x, y - v.y);
 	}
 
@@ -144,7 +151,6 @@ public:
 };
 
 typedef vec2<float> vec2f;
-typedef vec2<double> vec2d;
 typedef vec2<int> vec2i;
 
 

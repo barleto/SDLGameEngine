@@ -76,7 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\riczc\source\repos\SDLEngine\SDLEngine\SDL2_image\include;C:\Users\riczc\source\repos\SDLEngine\SDLEngine\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\riczc\source\repos\SDLEngine\SDLEngine\utils;C:\Users\riczc\source\repos\SDLEngine\SDLEngine\SDL2_image\include;C:\Users\riczc\source\repos\SDLEngine\SDLEngine\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -103,7 +103,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\riczc\source\repos\SDLEngine\SDLEngine\SDL2_image\include;C:\Users\riczc\source\repos\SDLEngine\SDLEngine\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\riczc\source\repos\SDLEngine\SDLEngine\utils;C:\Users\riczc\source\repos\SDLEngine\SDLEngine\SDL2_image\include;C:\Users\riczc\source\repos\SDLEngine\SDLEngine\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ECS\builtin\TrasformComponent.cpp" />
     <ClCompile Include="ECS\component.cpp" />
     <ClCompile Include="ECS\ECS.cpp" />
     <ClCompile Include="ECS\entity.cpp" />
