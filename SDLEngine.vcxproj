@@ -137,11 +137,13 @@
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ECS\builtin\TrasformComponent.h" />
     <ClInclude Include="ECS\component.h" />
     <ClInclude Include="ECS\ECS.h" />
     <ClInclude Include="ECS\entity.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="utils\vec2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
