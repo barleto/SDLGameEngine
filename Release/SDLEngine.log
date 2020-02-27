@@ -1,0 +1,8 @@
+﻿  component.cpp
+  ECS.cpp
+  entity.cpp
+  game.cpp
+  main.cpp
+  TextureManager.cpp
+game.obj : error LNK2001: unresolved external symbol "unsigned int __cdecl getComponentTypeId<class TransformComponent>(void)" (??$getComponentTypeId@VTransformComponent@@@@YAIXZ)
+C:\Users\riczc\source\repos\SDLEngine\Release\SDLEngine.exe : fatal error LNK1120: 1 unresolved externals

@@ -5,31 +5,7 @@
 #include <vector>
 #include <memory>
 #include <map>
-
-class Entity;
-
-using ComponentId = std::size_t;
-
-inline ComponentId getUniqueId() {
-	static ComponentId idCounter = 0;
-	return idCounter++;
-}
-
-
-template <typename T> inline ComponentId getComponentTypeId() {
-	static ComponentId uid = getUniqueId();
-	return uid;
-}
-
-class Component {
-public:
-	Entity* entity;
-	virtual void start() {}
-	virtual void update() {}
-	virtual void draw() {}
-
-	virtual ~Component() {}
-};
+#include "component.h"
 
 class Entity {
 public:
