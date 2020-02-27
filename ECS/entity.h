@@ -6,6 +6,7 @@
 
 class Entity {
 public:
+	const char * name;
 	void update();
 
 	void draw();
@@ -47,7 +48,8 @@ public:
 		}
 		return nullptr;
 	}
-
+protected:
+	//Entity() {};
 private:
 	bool _active = true;
 	std::map<ComponentId, std::unique_ptr<Component>> _componentsMap;
