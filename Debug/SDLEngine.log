@@ -1,5 +1,8 @@
-﻿  TextureManager.cpp
+﻿  ECS.cpp
+  TrasformComponent.cpp
+  TextureManager.cpp
   game.cpp
   main.cpp
   Generating Code...
+c:\users\riczc\source\repos\sdlengine\sdlengine\ecs\entity.h(42): warning C4715: 'Entity::addComponent<TransformComponent>': not all control paths return a value
   SDLEngine.vcxproj -> C:\Users\riczc\source\repos\SDLEngine\Debug\SDLEngine.exe

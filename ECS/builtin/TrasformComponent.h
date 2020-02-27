@@ -7,12 +7,12 @@ class TransformComponent: public Component
 public:
 	vec2i position();
 	vec2i localPosition();
-	void setPosition(float x, float y);
-	void setLocalPosition(float x, float y);
+	void setPosition(int x, int y);
+	void setLocalPosition(int x, int y);
 	void setParent(TransformComponent * parent, bool stayGlobalPosition);
 	Entity * parent();
 	float rotation;
-	vec2i scale;
+	vec2f scale = vec2f(1,1);
 
 private:
 	vec2i _lPos;

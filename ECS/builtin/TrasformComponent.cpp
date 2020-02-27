@@ -28,13 +28,13 @@ void TransformComponent::updateLocalPosition()
 }
 
 
-void TransformComponent::setPosition(float x, float y)
+void TransformComponent::setPosition(int x, int y)
 {
 	this->_gPos.set(x, y);
 	this->updateLocalPosition();
 }
 
-void TransformComponent::setLocalPosition(float x, float y)
+void TransformComponent::setLocalPosition(int x, int y)
 {
 	this->_lPos.set(x, y);
 	updateGlobalPosition();
