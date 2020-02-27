@@ -135,15 +135,16 @@
     <ClCompile Include="ECS\entity.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="TextureManager\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ECS\builtin\SpriteComponent.h" />
     <ClInclude Include="ECS\builtin\TrasformComponent.h" />
     <ClInclude Include="ECS\component.h" />
     <ClInclude Include="ECS\ECS.h" />
     <ClInclude Include="ECS\entity.h" />
     <ClInclude Include="game.h" />
-    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="TextureManager\TextureManager.h" />
     <ClInclude Include="utils\vec2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
