@@ -1,13 +1,13 @@
 #include "TrasformComponent.h"
 
-vec2i TransformComponent::position()
+vec2i& TransformComponent::position()
 {
 	return _lPos;
 }
 
-vec2i TransformComponent::localPosition()
+vec2i& TransformComponent::localPosition()
 {
-	return this->_gPos;
+	return _gPos;
 }
 
 void TransformComponent::updateGlobalPosition()

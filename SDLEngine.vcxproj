@@ -147,6 +147,9 @@
     <ClInclude Include="TextureManager\TextureManager.h" />
     <ClInclude Include="utils\vec2.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="D:\riczc\Desktop\player.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

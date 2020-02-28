@@ -25,26 +25,26 @@ public:
 	}
 
 	template<typename T>
-	T & addComponent() {
+	T * addComponent() {
 		try
 		{
 			T* component{ new T };
 			component->entity = this;
-			std::unique_ptr<Component> ptr{ component };
-			_componentsMap[getComponentTypeId<T>()] = std::move(ptr);
+			_componentsMap[getComponentTypeId<T>()] = component;
 			component->start();
-			return *component;
+			return component;
 		}
 		catch (void *)
 		{
 			std::cout << "Error creating component." << std::endl;
+			return nullptr;
 		}
 	}
 
 	template<typename T>
-	T & getComponent() {
+	T * getComponent() {
 		if (hasComponent<T>()) {
-			return _componentsMap[getComponentTypeId<T>()];
+			return static_cast<T*>(_componentsMap[getComponentTypeId<T>()]);
 		}
 		return nullptr;
 	}
@@ -52,6 +52,6 @@ protected:
 	//Entity() {};
 private:
 	bool _active = true;
-	std::map<ComponentId, std::unique_ptr<Component>> _componentsMap;
+	std::map<ComponentId, Component*> _componentsMap;
 };
 

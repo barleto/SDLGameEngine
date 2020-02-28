@@ -5,8 +5,8 @@
 class TransformComponent: public Component
 {
 public:
-	vec2i position();
-	vec2i localPosition();
+	vec2i& position();
+	vec2i& localPosition();
 	void setPosition(int x, int y);
 	void setLocalPosition(int x, int y);
 	void setParent(TransformComponent * parent, bool stayGlobalPosition);

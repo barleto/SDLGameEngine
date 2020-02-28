@@ -1,4 +1,5 @@
 #include "game.h"
+#include "ECS/builtin/SpriteComponent.h"
 
 Game::Game()
 {}
@@ -31,6 +32,7 @@ void Game::init(const char title[], int xPos, int yPos, int width, int height,in
 
 		_ecs = new ECS();
 		Entity& e = _ecs->createEntity();
+		e.addComponent<SpriteComponent>();
 	}
 	else {
 		setFatalError("Unable to start engine.");
