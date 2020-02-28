@@ -2,7 +2,7 @@
 #include "SDL.h"
 #include <memory>
 #include <iostream>
-#include "ECS/ECS.h"
+#include "../ECS/ECS.h"
 
 class GameEngine
 {

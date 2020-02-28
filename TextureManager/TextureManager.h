@@ -1,5 +1,5 @@
 #pragma once
-#include "../game.h"
+#include "GameEngine.h"
 #include "SDL_image.h"
 #include <memory>
 

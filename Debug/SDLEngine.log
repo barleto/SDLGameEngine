@@ -1,5 +1,9 @@
-﻿  TextureManager.cpp
-  game.cpp
+﻿  TrasformComponent.cpp
+  component.cpp
+  ECS.cpp
+  entity.cpp
+  GameEngine.cpp
   main.cpp
+  TextureManager.cpp
   Generating Code...
   SDLEngine.vcxproj -> C:\Users\riczc\source\repos\SDLEngine\Debug\SDLEngine.exe

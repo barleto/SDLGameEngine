@@ -1,7 +1,7 @@
 #pragma once
 #include "../component.h"
 #include "../entity.h"
-#include "../../game.h"
+#include "GameEngine.h"
 #include "TrasformComponent.h"
 #include "SDL.h"
 #include "SDL_image.h"
