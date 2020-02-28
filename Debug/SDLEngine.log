@@ -1,4 +1,5 @@
-﻿  game.cpp
-c:\users\riczc\source\repos\sdlengine\sdlengine\ecs\builtin\spritecomponent.h(41): warning C4150: deletion of pointer to incomplete type 'SDL_Texture'; no destructor called
-  c:\users\riczc\source\repos\sdlengine\sdlengine\sdl\include\sdl_render.h(138): note: see declaration of 'SDL_Texture'
+﻿  TextureManager.cpp
+  game.cpp
+  main.cpp
+  Generating Code...
   SDLEngine.vcxproj -> C:\Users\riczc\source\repos\SDLEngine\Debug\SDLEngine.exe

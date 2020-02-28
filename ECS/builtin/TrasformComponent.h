@@ -7,7 +7,7 @@ class TransformComponent: public Component
 public:
 	vec2i& position();
 	void setPosition(int x, int y);
-	float rotation;
+	double rotation;
 	vec2f scale = vec2f(1,1);
 
 private:

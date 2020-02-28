@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[]) {
 
-	Game * game = new Game();
+	GameEngine * game = new GameEngine();
 
 	game->init("SDLEngine",SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800,600, 60, false);
 	game->loop();

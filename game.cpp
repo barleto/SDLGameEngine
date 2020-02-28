@@ -2,23 +2,23 @@
 #include "ECS/builtin/SpriteComponent.h"
 #include "ECS/builtin/TrasformComponent.h"
 
-Game::Game()
+GameEngine::GameEngine()
 {}
 
-Game::~Game()
+GameEngine::~GameEngine()
 {}
 
-bool Game::_isRunning;
+bool GameEngine::_isRunning;
 
-SDL_Renderer* Game::renderer = nullptr;
+SDL_Renderer* GameEngine::renderer = nullptr;
 
-void Game::init(const char title[], int xPos, int yPos, int width, int height,int targetFps , bool fullsreen)
+void GameEngine::init(const char title[], int xPos, int yPos, int width, int height,int targetFps , bool fullsreen)
 {
 	std::cout << "Initializing engine..." << std::endl;
 	_targetFrameDelay = 1000/targetFps;
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
 		std::cout << "Subsystems initialized." << std::endl;
-		Game::_isRunning = true;
+		GameEngine::_isRunning = true;
 		int noFlags = 0;
 
 		_window = SDL_CreateWindow(title, xPos, yPos, width, height, fullsreen ? SDL_WINDOW_FULLSCREEN_DESKTOP : noFlags);
@@ -42,7 +42,7 @@ void Game::init(const char title[], int xPos, int yPos, int width, int height,in
 
 }
 
-void Game::loop()
+void GameEngine::loop()
 {
 	Uint32 frameStart;
 	int frameTime;
@@ -64,37 +64,37 @@ void Game::loop()
 	}
 }
 
-void Game::handleInputs()
+void GameEngine::handleInputs()
 {
 	SDL_Event event;
 	SDL_PollEvent(&event);
 	switch (event.type)
 	{
 	case SDL_QUIT:
-		Game::_isRunning = false;
+		GameEngine::_isRunning = false;
 		break;
 	default:
 		break;
 	}
 }
 
-void Game::updatePhysics()
+void GameEngine::updatePhysics()
 {
 }
 
-void Game::updateLogic()
+void GameEngine::updateLogic()
 {
 	_ecs->update();
 }
 
-void Game::render()
+void GameEngine::render()
 {
 	SDL_RenderClear(renderer);
 	_ecs->draw();
 	SDL_RenderPresent(renderer);
 }
 
-void Game::clean()
+void GameEngine::clean()
 {
 	std::cout << "Quitting engine..." << std::endl;
 	SDL_DestroyWindow(_window);
@@ -103,8 +103,8 @@ void Game::clean()
 	std::cout << "Game Closed." << std::endl;
 }
 
-void Game::setFatalError(const char message[])
+void GameEngine::setFatalError(const char message[])
 {
-	Game::_isRunning = false;
+	GameEngine::_isRunning = false;
 	std::cout << message<<":"<< SDL_GetError()<< std::endl;
 }

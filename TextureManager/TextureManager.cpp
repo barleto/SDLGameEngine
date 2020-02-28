@@ -14,7 +14,7 @@ SDL_Texture* TextureManager::loadTexture(const char filenName[])
 	else
 	{
 		//Create texture from surface pixels
-		newTexture = SDL_CreateTextureFromSurface(Game::renderer, loadedSurface);
+		newTexture = SDL_CreateTextureFromSurface(GameEngine::renderer, loadedSurface);
 		if (newTexture == NULL)
 		{
 			printf("Unable to create texture from %s! SDL Error: %s\n", filenName, SDL_GetError());
@@ -32,7 +32,7 @@ std::unique_ptr<SDL_TextureInfo> TextureManager::getTextureInfo(SDL_Texture * te
 	std::unique_ptr<SDL_TextureInfo> ptr{ new SDL_TextureInfo() };
 	if (SDL_QueryTexture(texture, &ptr->format, &ptr->access, &ptr->width, &ptr->height))
 	{
-		Game::setFatalError("Unable to get info ont Texture.");
+		GameEngine::setFatalError("Unable to get info ont Texture.");
 	}
 	return ptr;
 }

@@ -4,11 +4,11 @@
 #include <iostream>
 #include "ECS/ECS.h"
 
-class Game
+class GameEngine
 {
 public:
-	Game();
-	~Game();
+	GameEngine();
+	~GameEngine();
 	void init(const char title[], int xPos, int yPos, int width, int height, int targetFps, bool fullsreen);
 	void loop();
 	void clean();

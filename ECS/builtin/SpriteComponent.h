@@ -6,6 +6,7 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "../../TextureManager/TextureManager.h"
+#include <cmath>
 
 class SpriteComponent : public Component {
 public:
@@ -21,24 +22,24 @@ public:
 		_height = height;
 	}
 
-
 	void start() override {
 		_srcRect.x = _srcRect.y = 0;
 		_srcRect.h = _height; 
 		_srcRect.w = _width;
 	}
 
+	void update() override{}
+
 	void draw() override {
 		auto transform = entity->transform();
 		_destRect.x = transform.position().x;
 		_destRect.y = transform.position().y;
-		_destRect.w = int(transform.scale.x * _srcRect.w);
-		_destRect.h = int(transform.scale.y * _srcRect.h);
-		SDL_RenderCopy(Game::renderer, _texture, &_srcRect, &_destRect);
-	}
-
-	~SpriteComponent() {
-		delete _texture;
+		_destRect.w = int(abs(transform.scale.x) * _srcRect.w);
+		_destRect.h = int(abs(transform.scale.y) * _srcRect.h);
+		SDL_RendererFlip flip = SDL_FLIP_NONE;
+		flip = SDL_RendererFlip(flip | SDL_RendererFlip(transform.scale.y < 0? SDL_FLIP_VERTICAL : SDL_FLIP_NONE));
+		flip = SDL_RendererFlip(flip | SDL_RendererFlip(transform.scale.x < 0? SDL_FLIP_HORIZONTAL: SDL_FLIP_NONE));
+		SDL_RenderCopyEx(GameEngine::renderer, _texture, &_srcRect, &_destRect, transform.rotation, nullptr, flip);
 	}
 
 	void setWidth(int width) { _width = width; };
