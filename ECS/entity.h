@@ -45,6 +45,22 @@ public:
 	}
 
 	template<typename T>
+	T * addComponent(T* component) {
+		try
+		{
+			component->entity = this;
+			_componentsMap[getComponentTypeId<T>()] = component;
+			component->start();
+			return component;
+		}
+		catch (void *)
+		{
+			std::cout << "Error creating component." << std::endl;
+			return nullptr;
+		}
+	}
+
+	template<typename T>
 	T * getComponent() {
 		if (hasComponent<T>()) {
 			return static_cast<T*>(_componentsMap[getComponentTypeId<T>()]);
