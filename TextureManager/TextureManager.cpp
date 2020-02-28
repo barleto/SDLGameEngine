@@ -26,3 +26,13 @@ SDL_Texture* TextureManager::loadTexture(const char filenName[])
 
 	return newTexture;
 }
+
+std::unique_ptr<SDL_TextureInfo> TextureManager::getTextureInfo(SDL_Texture * texture)
+{
+	std::unique_ptr<SDL_TextureInfo> ptr{ new SDL_TextureInfo() };
+	if (SDL_QueryTexture(texture, &ptr->format, &ptr->access, &ptr->width, &ptr->height))
+	{
+		Game::setFatalError("Unable to get info ont Texture.");
+	}
+	return ptr;
+}
