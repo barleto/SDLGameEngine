@@ -68,7 +68,7 @@ public:
 		return nullptr;
 	}
 protected:
-	//Entity() {};
+	Entity() {};
 private:
 	bool _active = true;
 	std::map<ComponentId, Component*> _componentsMap;

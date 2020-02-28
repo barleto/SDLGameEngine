@@ -1,8 +1,7 @@
-﻿  TrasformComponent.cpp
-  component.cpp
-  ECS.cpp
+﻿  ECS.cpp
   entity.cpp
   GameEngine.cpp
+  gameobject.cpp
   main.cpp
   TextureManager.cpp
   Generating Code...

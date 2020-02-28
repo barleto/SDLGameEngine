@@ -11,11 +11,13 @@ GameEngine::~GameEngine()
 bool GameEngine::_isRunning;
 
 SDL_Renderer* GameEngine::renderer = nullptr;
+ECS* GameEngine::ecs = nullptr;
 
 void GameEngine::init(const char title[], int xPos, int yPos, int width, int height,int targetFps , bool fullsreen)
 {
 	std::cout << "Initializing engine..." << std::endl;
 	_targetFrameDelay = 1000/targetFps;
+	GameEngine::ecs = new ECS();
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
 		std::cout << "Subsystems initialized." << std::endl;
 		GameEngine::_isRunning = true;
@@ -30,10 +32,6 @@ void GameEngine::init(const char title[], int xPos, int yPos, int width, int hei
 			setFatalError("Unable to create renderer.");
 		}
 		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-
-		_ecs = new ECS();
-		Entity& e1 = _ecs->createEntity();
-		e1.addComponent<SpriteComponent, const char*>("Assets/player.png");
 	}
 	else {
 		setFatalError("Unable to start engine.");
@@ -54,7 +52,7 @@ void GameEngine::loop()
 		handleInputs();
 		updateLogic();
 		render();
-		_ecs->refresh();
+		ecs->refresh();
 
 		//wait if needed for frame time
 		frameTime = SDL_GetTicks() - frameStart;
@@ -84,13 +82,13 @@ void GameEngine::updatePhysics()
 
 void GameEngine::updateLogic()
 {
-	_ecs->update();
+	ecs->update();
 }
 
 void GameEngine::render()
 {
 	SDL_RenderClear(renderer);
-	_ecs->draw();
+	ecs->draw();
 	SDL_RenderPresent(renderer);
 }
 

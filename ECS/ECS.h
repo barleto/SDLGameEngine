@@ -14,7 +14,7 @@ public:
 	void update();
 	void draw();
 	void refresh();
-	Entity& createEntity();
+	Entity& addEntity(Entity * entity);
 
 private:
 	std::vector<std::unique_ptr<Entity>> _entities;

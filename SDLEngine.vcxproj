@@ -134,6 +134,7 @@
     <ClCompile Include="ECS\ECS.cpp" />
     <ClCompile Include="ECS\entity.cpp" />
     <ClCompile Include="GameEngine\GameEngine.cpp" />
+    <ClCompile Include="GameEngine\gameobject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TextureManager\TextureManager.cpp" />
   </ItemGroup>
@@ -144,6 +145,7 @@
     <ClInclude Include="ECS\ECS.h" />
     <ClInclude Include="ECS\entity.h" />
     <ClInclude Include="GameEngine\GameEngine.h" />
+    <ClInclude Include="GameEngine\gameobject.h" />
     <ClInclude Include="TextureManager\TextureManager.h" />
     <ClInclude Include="utils\vec2.h" />
   </ItemGroup>

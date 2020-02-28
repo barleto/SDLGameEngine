@@ -15,6 +15,7 @@ public:
 
 	bool isRunning() { return _isRunning; }
 	static SDL_Renderer * renderer;
+	static ECS* ecs;
 	static void setFatalError(const char message[]);
 private:
 
@@ -25,8 +26,6 @@ private:
 
 	int _targetFrameDelay;
 	SDL_Window * _window;
-	ECS * _ecs;
-
 	static bool _isRunning;
 };
 

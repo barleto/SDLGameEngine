@@ -18,9 +18,9 @@ void ECS::refresh() {
 	}), _entities.end());
 }
 
-Entity & ECS::createEntity() {
-	Entity* entity = new Entity();
-	entity->addComponent<TransformComponent>();
+
+
+Entity & ECS::addEntity(Entity * entity) {
 	std::unique_ptr<Entity> ptr{ entity };
 	_entities.emplace_back(std::move(ptr));
 	return *entity;
