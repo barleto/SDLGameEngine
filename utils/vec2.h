@@ -68,36 +68,36 @@ public:
 		return *this;
 	}
 
-	vec2 operator+(double s) {
+	vec2 operator+(T s) {
 		return vec2(x + s, y + s);
 	}
-	vec2 operator-(double s) {
+	vec2 operator-(T s) {
 		return vec2(x - s, y - s);
 	}
-	vec2 operator*(double s) {
+	vec2 operator*(T s) {
 		return vec2(x * s, y * s);
 	}
-	vec2 operator/(double s) {
+	vec2 operator/(T s) {
 		return vec2(x / s, y / s);
 	}
 
 
-	vec2& operator+=(double s) {
+	vec2& operator+=(T s) {
 		x += s;
 		y += s;
 		return *this;
 	}
-	vec2& operator-=(double s) {
+	vec2& operator-=(T s) {
 		x -= s;
 		y -= s;
 		return *this;
 	}
-	vec2& operator*=(double s) {
+	vec2& operator*=(T s) {
 		x *= s;
 		y *= s;
 		return *this;
 	}
-	vec2& operator/=(double s) {
+	vec2& operator/=(T s) {
 		x /= s;
 		y /= s;
 		return *this;

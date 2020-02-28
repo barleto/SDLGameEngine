@@ -21,5 +21,10 @@ bool Entity::isActive() { return _active; }
 
 void Entity::setActive(bool active) { _active = active; }
 
-void Entity::Destroy() { destroyFlag = true; }
+void Entity::destroy() { destroyFlag = true; }
+
+TransformComponent& Entity::transform()
+{
+	return *getComponent<TransformComponent>();
+}
 

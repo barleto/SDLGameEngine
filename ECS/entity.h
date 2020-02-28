@@ -3,6 +3,7 @@
 #include <memory>
 #include <map>
 #include "component.h"
+#include "builtin/TrasformComponent.h"
 
 class Entity {
 public:
@@ -15,7 +16,9 @@ public:
 
 	void setActive(bool active);
 
-	void Destroy();
+	void destroy();
+
+	TransformComponent& transform();
 
 	bool destroyFlag = false;
 
@@ -24,11 +27,11 @@ public:
 		return _componentsMap.find(getComponentTypeId<T>()) != _componentsMap.end();
 	}
 
-	template<typename T>
-	T * addComponent() {
+	template<typename T, typename... TArgs>
+	T * addComponent(TArgs... args) {
 		try
 		{
-			T* component{ new T };
+			T* component{ new T(args...) };
 			component->entity = this;
 			_componentsMap[getComponentTypeId<T>()] = component;
 			component->start();

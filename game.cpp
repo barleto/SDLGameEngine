@@ -1,5 +1,6 @@
 #include "game.h"
 #include "ECS/builtin/SpriteComponent.h"
+#include "ECS/builtin/TrasformComponent.h"
 
 Game::Game()
 {}
@@ -31,8 +32,8 @@ void Game::init(const char title[], int xPos, int yPos, int width, int height,in
 		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 
 		_ecs = new ECS();
-		Entity& e = _ecs->createEntity();
-		e.addComponent<SpriteComponent>();
+		Entity& e1 = _ecs->createEntity();
+		e1.addComponent<SpriteComponent, const char*>("Assets/player.png");
 	}
 	else {
 		setFatalError("Unable to start engine.");

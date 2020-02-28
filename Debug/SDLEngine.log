@@ -1,17 +1,2 @@
-﻿  TrasformComponent.cpp
-  ECS.cpp
-  game.cpp
-c:\users\riczc\source\repos\sdlengine\sdlengine\ecs\builtin\spritecomponent.h(29): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\riczc\source\repos\sdlengine\sdlengine\ecs\builtin\spritecomponent.h(30): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-  main.cpp
-  TextureManager.cpp
-  Generating Code...
+﻿  game.cpp
   SDLEngine.vcxproj -> C:\Users\riczc\source\repos\SDLEngine\Debug\SDLEngine.exe
