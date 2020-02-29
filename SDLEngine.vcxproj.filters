@@ -68,10 +68,11 @@
     <ClInclude Include="GameEngine\gameobject.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="D:\riczc\Desktop\player.png">
-      <Filter>Arquivos de Recurso</Filter>
-    </Image>
+    <ClInclude Include="GameEngine\imports.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Components\Header.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

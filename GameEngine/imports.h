@@ -1,0 +1,9 @@
+#pragma once
+#include "GameEngine.h"
+#include "gameobject.h"
+#include "ECS/ECS.h"
+#include "ECS/component.h"
+#include "ECS/entity.h"
+#include "ECS/builtin/SpriteComponent.h"
+#include "ECS/builtin/TrasformComponent.h"
+#include "utils/vec2.h"

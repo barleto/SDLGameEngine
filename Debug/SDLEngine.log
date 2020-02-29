@@ -1,8 +1,2 @@
-﻿  ECS.cpp
-  entity.cpp
-  GameEngine.cpp
-  gameobject.cpp
-  main.cpp
-  TextureManager.cpp
-  Generating Code...
+﻿  main.cpp
   SDLEngine.vcxproj -> C:\Users\riczc\source\repos\SDLEngine\Debug\SDLEngine.exe

@@ -5,5 +5,6 @@
 
 class GameObject : public Entity {
 public:
-	GameObject();
+	const char* name;
+	GameObject(const char* name = "");
 };

@@ -146,11 +146,10 @@
     <ClInclude Include="ECS\entity.h" />
     <ClInclude Include="GameEngine\GameEngine.h" />
     <ClInclude Include="GameEngine\gameobject.h" />
+    <ClInclude Include="GameEngine\imports.h" />
+    <ClInclude Include="Game\Components\Header.h" />
     <ClInclude Include="TextureManager\TextureManager.h" />
     <ClInclude Include="utils\vec2.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="D:\riczc\Desktop\player.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
