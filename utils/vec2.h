@@ -102,6 +102,10 @@ public:
 		y /= s;
 		return *this;
 	}
+	friend std::ostream& operator<<(std::ostream &stream, const vec2 &vec){
+		stream << "(" << vec.x << ", " << vec.y << ")";
+		return stream;
+	}
 
 	void set(T x, T y) {
 		this->x = x;
@@ -147,7 +151,6 @@ public:
 	static float cross(vec2 v1, vec2 v2) {
 		return (v1.x * v2.y) - (v1.y * v2.x);
 	}
-
 };
 
 typedef vec2<float> vec2f;
