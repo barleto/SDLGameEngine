@@ -4,9 +4,12 @@
 #include <map>
 #include "component.h"
 #include "builtin/TrasformComponent.h"
+#include "ECS.h"
 
 class Entity {
 public:
+	friend class ECS;
+
 	void update();
 
 	void draw();
@@ -18,8 +21,6 @@ public:
 	void destroy();
 
 	TransformComponent& transform();
-
-	bool destroyFlag = false;
 
 	template<typename T>
 	bool hasComponent() {
@@ -69,6 +70,7 @@ public:
 protected:
 	Entity() {};
 private:
+	bool _destroyFlag = false;
 	bool _active = true;
 	std::map<ComponentId, Component*> _componentsMap;
 };

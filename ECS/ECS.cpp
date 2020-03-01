@@ -14,7 +14,7 @@ void ECS::draw() {
 
 void ECS::refresh() {
 	_entities.erase(std::remove_if(_entities.begin(), _entities.end(), [](const std::unique_ptr<Entity>& m) {
-		return m->destroyFlag;
+		return m->_destroyFlag;
 	}), _entities.end());
 }
 

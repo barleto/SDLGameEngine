@@ -22,7 +22,7 @@ bool Entity::isActive() { return _active; }
 void Entity::setActive(bool active) { _active = active; }
 
 void Entity::destroy() { 
-	destroyFlag = true;
+	_destroyFlag = true;
 	setActive(false);
 }
 
