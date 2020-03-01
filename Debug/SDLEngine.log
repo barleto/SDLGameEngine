@@ -1,2 +1,5 @@
-﻿  main.cpp
+﻿  GameEngine.cpp
+  TextureManager.cpp
+  main.cpp
+  Generating Code...
   SDLEngine.vcxproj -> C:\Users\riczc\source\repos\SDLEngine\Debug\SDLEngine.exe

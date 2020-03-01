@@ -43,6 +43,10 @@ public:
 		SDL_RenderCopyEx(GameEngine::renderer, _texture, &_srcRect, &_destRect, transform.rotation, nullptr, flip);
 	}
 
+	~SpriteComponent() {
+		SDL_DestroyTexture(_texture);
+	}
+
 	void setWidth(int width) { _width = width; };
 	void setHeight(int height) { _height = height; };
 
