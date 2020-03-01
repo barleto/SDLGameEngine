@@ -13,6 +13,7 @@ bool GameEngine::_isRunning;
 SDL_Renderer* GameEngine::renderer = nullptr;
 ECS* GameEngine::ecs = nullptr;
 SDL_Event GameEngine::currentEvent;
+vec2i GameEngine::windowSize;
 
 void GameEngine::init(const char title[], int xPos, int yPos, int width, int height,int targetFps , bool fullsreen)
 {
@@ -28,6 +29,7 @@ void GameEngine::init(const char title[], int xPos, int yPos, int width, int hei
 		if (!_window) {
 			setFatalError("Unable to create Window: ");
 		}
+		windowSize.set(width, height);
 		renderer = SDL_CreateRenderer(_window, -1, 0);
 		if(!renderer) {
 			setFatalError("Unable to create renderer.");

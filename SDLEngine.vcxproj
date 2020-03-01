@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ECS\builtin\SpriteComponent.cpp" />
     <ClCompile Include="ECS\builtin\TrasformComponent.cpp" />
     <ClCompile Include="ECS\component.cpp" />
     <ClCompile Include="ECS\ECS.cpp" />

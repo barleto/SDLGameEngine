@@ -14,12 +14,13 @@ int main(int argc, char *argv[]) {
 	game->clean();
 	
 	return 0;
-
 }
 
 void setupScene() {
 	GameObject* go = new GameObject("title");
-	go->addComponent(new SpriteComponent("Assets/title.png"));
-	go->transform().setPosition(400 - 40, 300 - 30);
+	auto sc = go->addComponent(new SpriteComponent("Assets/title.png"));
+	auto& windowSize = GameEngine::windowSize;
+	auto sSize = sc->getSize();
+	go->transform().setPosition(windowSize.x/2 - sSize.x/2, windowSize.y/2 - sSize.y/2);
 	go->addComponent(new TestComponent());
 }

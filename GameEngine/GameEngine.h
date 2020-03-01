@@ -4,6 +4,7 @@
 #include <iostream>
 #include "../ECS/ECS.h"
 #include "InputManager.h"
+#include "vec2.h"
 
 class GameEngine
 {
@@ -18,7 +19,9 @@ public:
 	static SDL_Renderer * renderer;
 	static ECS* ecs;
 	static SDL_Event currentEvent;
+	static vec2i windowSize;
 	static void setFatalError(const char message[]);
+	
 
 private:
 	void handleInputs();
