@@ -7,7 +7,6 @@
 
 class Entity {
 public:
-	const char * name;
 	void update();
 
 	void draw();
