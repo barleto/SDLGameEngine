@@ -3,6 +3,7 @@
 #include <memory>
 #include <iostream>
 #include "../ECS/ECS.h"
+#include "InputManager.h"
 
 class GameEngine
 {
@@ -16,9 +17,10 @@ public:
 	bool isRunning() { return _isRunning; }
 	static SDL_Renderer * renderer;
 	static ECS* ecs;
+	static SDL_Event currentEvent;
 	static void setFatalError(const char message[]);
-private:
 
+private:
 	void handleInputs();
 	void updatePhysics();
 	void updateLogic();

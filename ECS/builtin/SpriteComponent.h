@@ -7,6 +7,7 @@
 #include "SDL_image.h"
 #include "../../TextureManager/TextureManager.h"
 #include <cmath>
+#include "InputManager.h"
 
 class SpriteComponent : public Component {
 public:

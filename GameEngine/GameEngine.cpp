@@ -12,6 +12,7 @@ bool GameEngine::_isRunning;
 
 SDL_Renderer* GameEngine::renderer = nullptr;
 ECS* GameEngine::ecs = nullptr;
+SDL_Event GameEngine::currentEvent;
 
 void GameEngine::init(const char title[], int xPos, int yPos, int width, int height,int targetFps , bool fullsreen)
 {
@@ -64,12 +65,15 @@ void GameEngine::loop()
 
 void GameEngine::handleInputs()
 {
-	SDL_Event event;
-	SDL_PollEvent(&event);
-	switch (event.type)
+	SDL_PollEvent(&currentEvent);
+	switch (currentEvent.type)
 	{
 	case SDL_QUIT:
 		GameEngine::_isRunning = false;
+		break;
+	case SDL_KEYDOWN:
+	case SDL_KEYUP:
+		InputManager::updateKeyState((SDL_EventType)currentEvent.type, currentEvent.key.keysym.sym);
 		break;
 	default:
 		break;

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "GameEngine/imports.h"
+#include "components/TestComponent.h"
 
 void setupScene();
 
@@ -17,6 +18,8 @@ int main(int argc, char *argv[]) {
 }
 
 void setupScene() {
-	GameObject* go = new GameObject("player") ;
-	go->addComponent(new SpriteComponent("Assets/player.png"));
+	GameObject* go = new GameObject("title");
+	go->addComponent(new SpriteComponent("Assets/title.png"));
+	go->transform().setPosition(400 - 40, 300 - 30);
+	go->addComponent(new TestComponent());
 }

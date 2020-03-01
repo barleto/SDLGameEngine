@@ -135,10 +135,12 @@
     <ClCompile Include="ECS\entity.cpp" />
     <ClCompile Include="GameEngine\GameEngine.cpp" />
     <ClCompile Include="GameEngine\gameobject.cpp" />
+    <ClCompile Include="GameEngine\InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TextureManager\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="components\TestComponent.h" />
     <ClInclude Include="ECS\builtin\SpriteComponent.h" />
     <ClInclude Include="ECS\builtin\TrasformComponent.h" />
     <ClInclude Include="ECS\component.h" />
@@ -146,8 +148,8 @@
     <ClInclude Include="ECS\entity.h" />
     <ClInclude Include="GameEngine\GameEngine.h" />
     <ClInclude Include="GameEngine\gameobject.h" />
+    <ClInclude Include="GameEngine\InputManager.h" />
     <ClInclude Include="GameEngine\imports.h" />
-    <ClInclude Include="Game\Components\Header.h" />
     <ClInclude Include="TextureManager\TextureManager.h" />
     <ClInclude Include="utils\vec2.h" />
   </ItemGroup>
