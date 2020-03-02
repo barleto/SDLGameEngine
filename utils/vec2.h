@@ -152,6 +152,14 @@ public:
 		return dot(this, onto) / onto.magnitude();
 	}
 
+	float dot(vec2 other) {
+		return dot(this, other);
+	}
+
+	float cross(vec2 other) {
+		return cross(this, other);
+	}
+
 	static float dot(vec2 v1, vec2 v2) {
 		return v1.x * v2.x + v1.y * v2.y;
 	}
