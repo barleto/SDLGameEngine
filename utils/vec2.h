@@ -135,6 +135,9 @@ public:
 	float length() const {
 		return std::sqrt(x * x + y * y);
 	}
+	float magnitude() const {
+		return length();
+	}
 	void truncate(double length) {
 		double angle = atan2f(y, x);
 		x = length * cos(angle);
@@ -143,6 +146,10 @@ public:
 
 	vec2 ortho() const {
 		return vec2(y, -x);
+	}
+
+	vec2 project(vec2 onto) {
+		return dot(this, onto) / onto.magnitude();
 	}
 
 	static float dot(vec2 v1, vec2 v2) {
