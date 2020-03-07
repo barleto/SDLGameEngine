@@ -20,10 +20,10 @@ void SpriteComponent::start() {
 
 void SpriteComponent::draw() {
 	auto transform = entity->transform();
-	_destRect.x = transform.position().x;
-	_destRect.y = transform.position().y;
-	_destRect.w = int(abs(transform.scale.x) * _srcRect.w);
-	_destRect.h = int(abs(transform.scale.y) * _srcRect.h);
+	_destRect.x = static_cast<int>(transform.position().x);
+	_destRect.y = static_cast<int>(transform.position().y);
+	_destRect.w = static_cast<int>(abs(transform.scale.x) * _srcRect.w);
+	_destRect.h = static_cast<int>(abs(transform.scale.y) * _srcRect.h);
 	SDL_RendererFlip flip = SDL_FLIP_NONE;
 	flip = SDL_RendererFlip(flip | SDL_RendererFlip(transform.scale.y < 0 ? SDL_FLIP_VERTICAL : SDL_FLIP_NONE));
 	flip = SDL_RendererFlip(flip | SDL_RendererFlip(transform.scale.x < 0 ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE));

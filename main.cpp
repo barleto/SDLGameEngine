@@ -1,6 +1,7 @@
 #include <iostream>
 #include "GameEngine/imports.h"
 #include "components/TestComponent.h"
+#include "ECS/builtin/RigidBody.h"
 
 void setupScene();
 
@@ -23,4 +24,5 @@ void setupScene() {
 	auto sSize = sc->getSize();
 	go->transform().setPosition(windowSize.x/2 - sSize.x/2, windowSize.y/2 - sSize.y/2);
 	go->addComponent(new TestComponent());
+	go->addComponent(new RigidBody());
 }

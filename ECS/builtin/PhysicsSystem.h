@@ -3,11 +3,10 @@
 #include "../system.h"
 #include "../entity.h"
 #include "TrasformComponent.h"
+#include "RigidBody.h"
 
 class PhyscisSystem : public System {
-	void update() override {
-		for (Entity* e : _entities) {
-			e->getComponent<TransformComponent>()->position().y += 1;
-		}
-	}
+public:
+	float gravity = -0.2f;
+	void update() override;
 };

@@ -1,13 +1,14 @@
 #pragma once
 #include "imports.h"
+#include "ECS/builtin/RigidBody.h"
 
 class TestComponent : public Component {
 public:
 
 	void start() override;
-
-	void update();
+	void update() override;
 
 private:
-	vec2i _initialPos;
+	vec2f _initialPos;
+	RigidBody* _rigidbody;
 };

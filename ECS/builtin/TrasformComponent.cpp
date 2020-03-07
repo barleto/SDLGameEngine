@@ -1,16 +1,16 @@
 #include "TrasformComponent.h"
 
-vec2i& TransformComponent::position()
+vec2f& TransformComponent::position()
 {
 	return _position;
 }
 
-void TransformComponent::setPosition(int x, int y)
+void TransformComponent::setPosition(float x, float y)
 {
 	_position.set(x, y);
 }
 
-void TransformComponent::setPosition(vec2i vec)
+void TransformComponent::setPosition(vec2f vec)
 {
 	setPosition(vec.x, vec.y);
 }

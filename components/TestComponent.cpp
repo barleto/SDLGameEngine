@@ -1,24 +1,26 @@
 #include "TestComponent.h"
-#include "ECS/ECS.h"
-#include "GameEngine.h"
-#include "ECS/builtin/PhysicsSystem.h"
-
+#include "ECS/builtin/RigidBody.h"
 void TestComponent::start() {
 	_initialPos = entity->transform().position();
+	_rigidbody = entity->getComponent<RigidBody>();
 }
 
 void TestComponent::update() {
+	if (!_rigidbody) {
+		_rigidbody = entity->getComponent<RigidBody>();
+		return;
+	}
 	if (InputManager::getKeyHoldDown(SDLK_w)) {
-		entity->transform().position().y -= 5;
+		_rigidbody->velocity.y -= 1;
 	}
 	if (InputManager::getKeyHoldDown(SDLK_s)) {
-		entity->transform().position().y += 5;
+		_rigidbody->velocity.y += 1;
 	}
 	if (InputManager::getKeyHoldDown(SDLK_a)) {
-		entity->transform().position().x -= 5;
+		_rigidbody->velocity.x -= 1;
 	}
 	if (InputManager::getKeyHoldDown(SDLK_d)) {
-		entity->transform().position().x += 5;
+		_rigidbody->velocity.x += 1;
 	}
 	if (InputManager::getKeyHoldDown(SDLK_q)) {
 		entity->transform().rotation -= 5;
@@ -29,5 +31,6 @@ void TestComponent::update() {
 	if (InputManager::getKeyDown(SDLK_SPACE)) {
 		entity->transform().rotation = 0;
 		entity->transform().setPosition(_initialPos);
+		_rigidbody->velocity.set(0, 0);
 	}
 }
