@@ -1,4 +1,7 @@
 #include "TestComponent.h"
+#include "ECS/ECS.h"
+#include "GameEngine.h"
+#include "ECS/builtin/PhysicsSystem.h"
 
 void TestComponent::start() {
 	_initialPos = entity->transform().position();

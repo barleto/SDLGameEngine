@@ -15,7 +15,6 @@ template <typename T> SystemId getSystemTypeId() {
 
 class System {
 public:
-	SystemId id = getUniqueSysId();
 	virtual void update() = 0;
 	void subscribeEntity(Entity* e);
 	void unsubscribeEntity(Entity* e);

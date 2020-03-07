@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="components\TestComponent.h" />
+    <ClInclude Include="ECS\builtin\PhysicsSystem.h" />
     <ClInclude Include="ECS\builtin\SpriteComponent.h" />
     <ClInclude Include="ECS\builtin\TrasformComponent.h" />
     <ClInclude Include="ECS\component.h" />

@@ -1,27 +1,35 @@
 #include "ECS.h"
 
-void ECS::update() {
-	for (auto& e : _entities) {
+void ECS::updateSystems(){
+	for (auto pair : _systems) {
+		pair.second->update();
+	}
+}
+
+void ECS::updateLogic() {
+	for (auto e : _entities) {
 		e->update();
 	}
 }
 
 void ECS::draw() {
-	for (auto& e : _entities) {
+	for (auto e : _entities) {
 		e->draw();
 	}
 }
 
 void ECS::refresh() {
-	_entities.erase(std::remove_if(_entities.begin(), _entities.end(), [](const std::unique_ptr<Entity>& m) {
+	_entities.erase(std::remove_if(_entities.begin(), _entities.end(), [](const Entity* m) {
+		if (m->_destroyFlag) {
+			delete m;
+		}
 		return m->_destroyFlag;
 	}), _entities.end());
 }
 
 
 
-Entity & ECS::addEntity(Entity * entity) {
-	std::unique_ptr<Entity> ptr{ entity };
-	_entities.emplace_back(std::move(ptr));
-	return *entity;
+Entity * ECS::addEntity(Entity * entity) {
+	_entities.emplace_back(entity);
+	return entity;
 }

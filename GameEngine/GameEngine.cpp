@@ -35,6 +35,7 @@ void GameEngine::init(const char title[], int xPos, int yPos, int width, int hei
 			setFatalError("Unable to create renderer.");
 		}
 		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+		ecs->addSystem(new PhyscisSystem());
 	}
 	else {
 		setFatalError("Unable to start engine.");
@@ -84,11 +85,12 @@ void GameEngine::handleInputs()
 
 void GameEngine::updatePhysics()
 {
+	ecs->updateSystems();
 }
 
 void GameEngine::updateLogic()
 {
-	ecs->update();
+	ecs->updateLogic();
 }
 
 void GameEngine::render()

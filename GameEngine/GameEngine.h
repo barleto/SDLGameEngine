@@ -5,6 +5,7 @@
 #include "../ECS/ECS.h"
 #include "InputManager.h"
 #include "vec2.h"
+#include "ECS/builtin/PhysicsSystem.h"
 
 class GameEngine
 {
