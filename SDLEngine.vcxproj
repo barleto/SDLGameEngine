@@ -129,11 +129,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="components\TestComponent.cpp" />
     <ClCompile Include="ECS\builtin\SpriteComponent.cpp" />
     <ClCompile Include="ECS\builtin\TrasformComponent.cpp" />
     <ClCompile Include="ECS\component.cpp" />
     <ClCompile Include="ECS\ECS.cpp" />
     <ClCompile Include="ECS\entity.cpp" />
+    <ClCompile Include="ECS\system.cpp" />
     <ClCompile Include="GameEngine\Collision.cpp" />
     <ClCompile Include="GameEngine\GameEngine.cpp" />
     <ClCompile Include="GameEngine\gameobject.cpp" />
@@ -148,6 +150,7 @@
     <ClInclude Include="ECS\component.h" />
     <ClInclude Include="ECS\ECS.h" />
     <ClInclude Include="ECS\entity.h" />
+    <ClInclude Include="ECS\system.h" />
     <ClInclude Include="GameEngine\Collision.h" />
     <ClInclude Include="GameEngine\GameEngine.h" />
     <ClInclude Include="GameEngine\gameobject.h" />
