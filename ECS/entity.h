@@ -61,6 +61,15 @@ public:
 	}
 
 	template<typename T>
+	void removeComponent() {
+		if (_componentsMap.find(getComponentTypeId<T>()) != _componentsMap.end()) {
+			auto c = _componentsMap[getComponentTypeId<T>()];
+			_componentsMap.erase(getComponentTypeId<T>());
+			delete c;
+		}
+	}
+
+	template<typename T>
 	T * getComponent() {
 		if (hasComponent<T>()) {
 			return static_cast<T*>(_componentsMap[getComponentTypeId<T>()]);
