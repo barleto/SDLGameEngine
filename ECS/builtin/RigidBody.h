@@ -10,6 +10,7 @@ class RigidBody : public Component {
 public:
 	vec2f velocity;
 	bool useGravity = true;
+	float friction = 0.01f;
 
 	void start() override;
 

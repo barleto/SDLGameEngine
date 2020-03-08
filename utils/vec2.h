@@ -138,8 +138,8 @@ public:
 	float magnitude() const {
 		return length();
 	}
-	void truncate(double length) {
-		double angle = atan2f(y, x);
+	void truncate(float length) {
+		float angle = atan2f(y, x);
 		x = length * cos(angle);
 		y = length * sin(angle);
 	}

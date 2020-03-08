@@ -9,7 +9,7 @@ void PhyscisSystem::update() {
 				rigidbody->velocity.y -= gravity;
 			}
 			transform->position() += rigidbody->velocity;
-
+			rigidbody->velocity.truncate((1-rigidbody->friction) * rigidbody->velocity.length());
 		}
 	}
 }

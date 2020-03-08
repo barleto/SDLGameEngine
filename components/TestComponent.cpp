@@ -28,9 +28,25 @@ void TestComponent::update() {
 	if (InputManager::getKeyHoldDown(SDLK_e)) {
 		entity->transform().rotation += 5;
 	}
-	if (InputManager::getKeyDown(SDLK_SPACE)) {
+	if (InputManager::getKeyHoldDown(SDLK_SPACE)) {
 		entity->transform().rotation = 0;
 		entity->transform().setPosition(_initialPos);
 		_rigidbody->velocity.set(0, 0);
+	}
+
+	if (entity->transform().position().y > 630) {
+		entity->transform().position().y = -30;
+	}
+
+	if (entity->transform().position().y < -30) {
+		entity->transform().position().y = 630;
+	}
+
+	if (entity->transform().position().x > 840) {
+		entity->transform().position().x = -40;
+	}
+
+	if (entity->transform().position().x < -40) {
+		entity->transform().position().x = 840;
 	}
 }
