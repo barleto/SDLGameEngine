@@ -6,10 +6,16 @@ void PhyscisSystem::update() {
 		if (rigidbody) {
 			auto transform = e->getComponent<TransformComponent>();
 			if (rigidbody->useGravity) {
-				rigidbody->velocity.y -= gravity;
+				rigidbody->velocity.y -= rigidbody->gravityScale * gravity * GameEngine::deltaTime;
 			}
-			transform->position() += rigidbody->velocity;
-			rigidbody->velocity.truncate((1-rigidbody->friction) * rigidbody->velocity.length());
+			auto velocityVector = rigidbody->velocity * unitSizeInPixels * GameEngine::deltaTime;
+			transform->position() += velocityVector;
+
+			if (rigidbody->friction > 0 && rigidbody->friction <= 1) {
+				auto friction = std::pow(1 - rigidbody->friction, GameEngine::deltaTime);;
+				rigidbody->velocity *= friction;
+			}
+	
 		}
 	}
 }

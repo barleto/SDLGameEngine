@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <cmath>
 #include "../system.h"
 #include "../entity.h"
 #include "TrasformComponent.h"
@@ -7,6 +8,7 @@
 
 class PhyscisSystem : public System {
 public:
-	float gravity = -0.2f;
+	float gravity = -16.6666f;
 	void update() override;
+	vec2f unitSizeInPixels = vec2f(60,60);
 };

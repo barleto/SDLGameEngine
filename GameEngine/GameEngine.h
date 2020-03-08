@@ -20,7 +20,8 @@ public:
 	static SDL_Renderer * renderer;
 	static ECS* ecs;
 	static SDL_Event currentEvent;
-	static vec2i windowSize;
+	static vec2f windowSize;
+	static float deltaTime;
 	static void setFatalError(const char message[]);
 	
 

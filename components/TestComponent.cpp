@@ -10,6 +10,7 @@ void TestComponent::update() {
 		_rigidbody = entity->getComponent<RigidBody>();
 		return;
 	}
+
 	if (InputManager::getKeyHoldDown(SDLK_w)) {
 		_rigidbody->velocity.y -= 1;
 	}
@@ -23,10 +24,10 @@ void TestComponent::update() {
 		_rigidbody->velocity.x += 1;
 	}
 	if (InputManager::getKeyHoldDown(SDLK_q)) {
-		entity->transform().rotation -= 5;
+		entity->transform().rotation -= 300 * GameEngine::deltaTime;
 	}
 	if (InputManager::getKeyHoldDown(SDLK_e)) {
-		entity->transform().rotation += 5;
+		entity->transform().rotation += 300 * GameEngine::deltaTime;
 	}
 	if (InputManager::getKeyHoldDown(SDLK_SPACE)) {
 		entity->transform().rotation = 0;
@@ -49,4 +50,7 @@ void TestComponent::update() {
 	if (entity->transform().position().x < -40) {
 		entity->transform().position().x = 840;
 	}
+
+	using namespace std;
+	//cout << _rigidbody->velocity.y << endl;
 }

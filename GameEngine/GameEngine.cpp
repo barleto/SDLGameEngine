@@ -13,7 +13,8 @@ bool GameEngine::_isRunning;
 SDL_Renderer* GameEngine::renderer = nullptr;
 ECS* GameEngine::ecs = nullptr;
 SDL_Event GameEngine::currentEvent;
-vec2i GameEngine::windowSize;
+vec2f GameEngine::windowSize;
+float GameEngine::deltaTime = 0;
 
 void GameEngine::init(const char title[], int xPos, int yPos, int width, int height,int targetFps , bool fullsreen)
 {
@@ -29,7 +30,7 @@ void GameEngine::init(const char title[], int xPos, int yPos, int width, int hei
 		if (!_window) {
 			setFatalError("Unable to create Window: ");
 		}
-		windowSize.set(width, height);
+		windowSize.set(static_cast<float>(width), static_cast<float>(height));
 		renderer = SDL_CreateRenderer(_window, -1, 0);
 		if(!renderer) {
 			setFatalError("Unable to create renderer.");
@@ -48,14 +49,24 @@ void GameEngine::loop()
 {
 	Uint32 frameStart;
 	int frameTime;
+	float lastUpdateLogicTime = 0;
+	float lastUpdateSystemsTime = 0;
 
 	while (isRunning()) {
 		frameStart = SDL_GetTicks();
 
+		deltaTime = (SDL_GetTicks() - lastUpdateSystemsTime) / 1000;
 		updatePhysics();
+		lastUpdateSystemsTime = static_cast<float>(SDL_GetTicks());
+
 		handleInputs();
+
+		deltaTime = (SDL_GetTicks() - lastUpdateLogicTime) / 1000;
 		updateLogic();
+		lastUpdateLogicTime = static_cast<float>(SDL_GetTicks());
+
 		render();
+
 		ecs->refresh();
 
 		//wait if needed for frame time

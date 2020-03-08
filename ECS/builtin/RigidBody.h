@@ -8,9 +8,10 @@
 
 class RigidBody : public Component {
 public:
+	float gravityScale = 1;
 	vec2f velocity;
 	bool useGravity = true;
-	float friction = 0.01f;
+	float friction = 0.5;
 
 	void start() override;
 
