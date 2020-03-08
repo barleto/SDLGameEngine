@@ -12,16 +12,16 @@ void TestComponent::update() {
 	}
 
 	if (InputManager::getKeyHoldDown(SDLK_w)) {
-		_rigidbody->velocity.y -= 1;
+		_rigidbody->velocity.y -= 60 * GameEngine::deltaTime;
 	}
 	if (InputManager::getKeyHoldDown(SDLK_s)) {
-		_rigidbody->velocity.y += 1;
+		_rigidbody->velocity.y += 60 * GameEngine::deltaTime;
 	}
 	if (InputManager::getKeyHoldDown(SDLK_a)) {
-		_rigidbody->velocity.x -= 1;
+		_rigidbody->velocity.x -= 60 * GameEngine::deltaTime;
 	}
 	if (InputManager::getKeyHoldDown(SDLK_d)) {
-		_rigidbody->velocity.x += 1;
+		_rigidbody->velocity.x += 60 * GameEngine::deltaTime;
 	}
 	if (InputManager::getKeyHoldDown(SDLK_q)) {
 		entity->transform().rotation -= 300 * GameEngine::deltaTime;
@@ -52,5 +52,5 @@ void TestComponent::update() {
 	}
 
 	using namespace std;
-	//cout << _rigidbody->velocity.y << endl;
+	cout << _rigidbody->velocity.y << endl;
 }
