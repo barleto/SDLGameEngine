@@ -16,8 +16,8 @@ template <typename T> SystemId getSystemTypeId() {
 class System {
 public:
 	virtual void update() = 0;
-	void subscribeEntity(Entity* e);
-	void unsubscribeEntity(Entity* e);
+	virtual void subscribeEntity(Entity* e);
+	virtual void unsubscribeEntity(Entity* e);
 
 protected:
 	std::set<Entity*> _entities;
