@@ -26,6 +26,14 @@ void Entity::destroy() {
 	setActive(false);
 }
 
+std::vector<Component*> Entity::getComponentsList() {
+	auto v = std::vector<Component*>();
+	for (auto it = _componentsMap.begin(); it != _componentsMap.end(); ++it) {
+		v.push_back(it->second);
+	}
+	return v;
+}
+
 TransformComponent& Entity::transform()
 {
 	return *getComponent<TransformComponent>();

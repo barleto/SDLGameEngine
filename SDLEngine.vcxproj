@@ -130,6 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="components\TestComponent.cpp" />
+    <ClCompile Include="ECS\builtin\ColliderComponent.cpp" />
     <ClCompile Include="ECS\builtin\PhysicsSystem.cpp" />
     <ClCompile Include="ECS\builtin\RigidBody.cpp" />
     <ClCompile Include="ECS\builtin\SpriteComponent.cpp" />
@@ -147,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="components\TestComponent.h" />
+    <ClInclude Include="ECS\builtin\ColliderComponent.h" />
     <ClInclude Include="ECS\builtin\PhysicsSystem.h" />
     <ClInclude Include="ECS\builtin\RigidBody.h" />
     <ClInclude Include="ECS\builtin\SpriteComponent.h" />

@@ -1,9 +1,14 @@
 #include "TestComponent.h"
 #include "ECS/builtin/RigidBody.h"
+#include <functional>
+
+
 void TestComponent::start() {
 	_initialPos = entity->transform().position();
 	_rigidbody = entity->getComponent<RigidBody>();
+	auto cc = entity->getComponent<ColliderComponent>();
 }
+
 
 void TestComponent::update() {
 	if (!_rigidbody) {
@@ -52,5 +57,10 @@ void TestComponent::update() {
 	}
 
 	using namespace std;
-	cout << _rigidbody->velocity.y << endl;
+	//cout << _rigidbody->velocity.x << endl;
+}
+
+void TestComponent::onCollision(GameObject * go) {
+	using namespace std;
+	cout << go->name << endl;
 }

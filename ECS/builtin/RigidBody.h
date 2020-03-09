@@ -11,7 +11,7 @@ public:
 	float gravityScale = 1;
 	vec2f velocity;
 	bool useGravity = true;
-	float friction = 0;
+	float friction = 0.4f;
 
 	void start() override;
 

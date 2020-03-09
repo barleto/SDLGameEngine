@@ -2,6 +2,7 @@
 #include <iostream>
 
 class Entity;
+class GameObject;
 
 using ComponentId = std::size_t;
 
@@ -18,6 +19,7 @@ public:
 	virtual void start();
 	virtual void update();
 	virtual void draw();
+	virtual void onCollision(GameObject* go);
 
 	virtual ~Component();
 };

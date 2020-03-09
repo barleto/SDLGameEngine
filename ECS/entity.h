@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
-#include <memory>
 #include <map>
+#include <vector>
 #include "component.h"
 #include "builtin/TrasformComponent.h"
 #include "ECS.h"
@@ -19,6 +19,8 @@ public:
 	void setActive(bool active);
 
 	void destroy();
+
+	std::vector<Component*> getComponentsList();;
 
 	TransformComponent& transform();
 

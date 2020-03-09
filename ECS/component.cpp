@@ -11,4 +11,6 @@ void Component::update() {}
 
 void Component::draw() {}
 
+void Component::onCollision(GameObject * go) {}
+
 Component::~Component() {}
