@@ -8,6 +8,7 @@ public:
 
 	void start() override;
 	void update() override;
+	void onCollision(GameObject * go) override;
 
 private:
 	vec2f _initialPos;
